@@ -18,7 +18,7 @@
         <main>
             <form method="POST" action="/">
                 <textarea name="texto" placeholder="Ingresa el texto aquí..." required>{{ texto if texto else "" }}</textarea>
-                
+
                 
                     <label for="src_lang">Idioma de origen:</label>
                     <select name="src_lang">
@@ -34,8 +34,6 @@
                         <!-- Agregar más opciones de idiomas aquí -->
                     </select>
                 
-
-                
                     <label for="opcion">Opción:</label>
                     <select id="select-option" name="opcion">
                         <option value="texto">Traducir a texto</option>
@@ -43,7 +41,6 @@
                         <option value="audio_directo">Generar audio sin traducir</option>
                     </select><br>
                 
-
                 <button type="submit">Convertir</button>
             </form>
 
