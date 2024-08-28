@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Idiomas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Conversor de Idiomas</h1>
+            <button id="toggle-dark-mode">
+                <span id="dark-mode-icon">🌕</span>
+                <span id="light-mode-icon" style="display: none;">☀️</span>
+            </button>
+        </header>
+        <main>
+            <form method="POST" action="/">
+                <textarea name="texto" placeholder="Ingresa el texto aquí..." required>{{ texto if texto else "" }}</textarea>
+                
+                
+                    <label for="src_lang">Idioma de origen:</label>
+                    <select name="src_lang">
+                        <option value="es" {% if texto and texto == 'es' %}selected{% endif %}>Español</option>
+                        <option value="en" {% if texto and texto == 'en' %}selected{% endif %}>Inglés</option>
+                        <!-- Agregar más opciones de idiomas aquí -->
+                    </select>
+
+                    <label for="dest_lang">Idioma de destino:</label>
+                    <select name="dest_lang">
+                        <option value="en" {% if texto and texto == 'en' %}selected{% endif %}>Inglés</option>
+                        <option value="es" {% if texto and texto == 'es' %}selected{% endif %}>Español</option>
+                        <!-- Agregar más opciones de idiomas aquí -->
+                    </select>
+                
+
+                
+                    <label for="opcion">Opción:</label>
+                    <select id="select-option" name="opcion">
+                        <option value="texto">Traducir a texto</option>
+                        <option value="audio">Traducir a texto y audio</option>
+                        <option value="audio_directo">Generar audio sin traducir</option>
+                    </select><br>
+                
+
+                <button type="submit">Convertir</button>
+            </form>
+
+            {% if resultado %}
+            <div class="result">
+                <h2>Resultado:</h2>
+                <p>{{ resultado }}</p>
+                {% if audio %}
+                <audio controls>
+                    <source src="{{ audio }}" type="audio/mpeg">
+                    Tu navegador no soporta la reproducción de audio.
+                </audio>
+                <a href="{{ audio }}" download="audio.mp3" class="download-button">Descargar audio</a>
+                {% endif %}
+            </div>
+            {% endif %}
+
+        </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+
+</body>
+</html>
