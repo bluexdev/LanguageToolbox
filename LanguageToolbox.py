@@ -1,10 +1,10 @@
-from flask import Flask, request, render_template, send_file
+from flask import Flask, request, render_template, send_file, send_file, url_for
 from googletrans import Translator
 from gtts import gTTS
 import io
 import os
 
-app = Flask(__name__)
+app = Flask(__name__, static_url_path='/static')
 
 translator = Translator()
 
