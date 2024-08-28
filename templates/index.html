@@ -1,9 +1,32 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <!-- Metadatos básicos -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conversor de Idiomas</title>
+    <title>LanguageToolbox - Conversión de Texto y Traducción de Idiomas</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}" type="image/x-icon">
+
+    <!-- Metaetiquetas para SEO -->
+    <meta name="description" content="LanguageToolbox es una herramienta de conversión de texto a diferentes idiomas y formatos. Traduce texto, genera audio y mucho más.">
+    <meta name="keywords" content="traducción, idiomas, conversión de texto, LanguageToolbox, texto a audio, herramienta de idiomas">
+    <meta name="author" content="Bluexdev">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Metaetiquetas Open Graph para redes sociales -->
+    <meta property="og:title" content="LanguageToolbox - Conversión de Texto y Traducción de Idiomas">
+    <meta property="og:description" content="Convierte texto a diferentes idiomas y formatos fácilmente con LanguageToolbox.">
+    <meta property="og:image" content="{{ url_for('static', filename='images/preview.png') }}">
+    <meta property="og:url" content="https://languagetoolbox.onrender.com/">
+    <meta property="og:type" content="website">
+    
+    <!-- Metaetiquetas de Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="LanguageToolbox - Conversión de Texto y Traducción de Idiomas">
+    <meta name="twitter:description" content="Convierte texto a diferentes idiomas y formatos fácilmente con LanguageToolbox.">
+    <meta name="twitter:image" content="{{ url_for('static', filename='images/preview.png') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='CSS/styles.css') }}">
 </head>
 <body>
