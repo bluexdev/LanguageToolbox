@@ -4,7 +4,7 @@ from gtts import gTTS
 import io
 import os
 
-app = Flask(__name__, static_url_path='/static')
+app = Flask(__name__, static_url_path='/static', static_folder='static')
 
 translator = Translator()
 
